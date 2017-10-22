@@ -1,0 +1,48 @@
+{
+  "name": "MarkdownNotes",
+  "productName": "Markdown notes",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Markdown notes app",
+  "author": "Liam Kelly",
+  "main": "public/main.js",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "@skidding/react-codemirror": "^1.0.1",
+    "electron-is-dev": "^0.3.0",
+    "lodash": "^4.17.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-highlight": "^0.10.0",
+    "react-markdown": "^2.5.0",
+    "react-scripts": "1.0.14",
+    "react-split-pane": "^0.1.66"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/main.js",
+    "preelectron-pack": "yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "electron": "^1.7.9",
+    "electron-builder": "^19.37.2",
+    "wait-on": "^2.0.2"
+  },
+  "build": {
+    "appId": "com.mook",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
